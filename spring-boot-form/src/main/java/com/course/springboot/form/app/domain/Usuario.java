@@ -4,6 +4,7 @@
 package com.course.springboot.form.app.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
@@ -55,8 +56,18 @@ public class Usuario {
 	@Past
 	private Date fechaNacimiento;
 	
+	@NonNull
+	private Pais pais;
+	
 	@NotEmpty
-	private String pais;
+	private List<Role> roles;
+	
+	private Boolean habilitar;
+	
+	@NotEmpty
+	private String genero;
+	
+	private String valorSecreto;
 	
 	/**
 	 * @return the userName
@@ -173,14 +184,70 @@ public class Usuario {
 	/**
 	 * @return the pais
 	 */
-	public String getPais() {
+	public Pais getPais() {
 		return pais;
 	}
 
 	/**
 	 * @param pais the pais to set
 	 */
-	public void setPais(String pais) {
+	public void setPais(Pais pais) {
 		this.pais = pais;
+	}
+
+	/**
+	 * @return the roles
+	 */
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	/**
+	 * @param roles the roles to set
+	 */
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
+	/**
+	 * @return the habilitar
+	 */
+	public Boolean getHabilitar() {
+		return habilitar;
+	}
+
+	/**
+	 * @param habilitar the habilitar to set
+	 */
+	public void setHabilitar(Boolean habilitar) {
+		this.habilitar = habilitar;
+	}
+
+	/**
+	 * @return the genero
+	 */
+	public String getGenero() {
+		return genero;
+	}
+
+	/**
+	 * @param genero the genero to set
+	 */
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	/**
+	 * @return the valorSecreto
+	 */
+	public String getValorSecreto() {
+		return valorSecreto;
+	}
+
+	/**
+	 * @param valorSecreto the valorSecreto to set
+	 */
+	public void setValorSecreto(String valorSecreto) {
+		this.valorSecreto = valorSecreto;
 	}
 }
